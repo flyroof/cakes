@@ -17,13 +17,13 @@ namespace ConsoleApplication1
             int t = int.Parse(Console.ReadLine());          //amount of truffles available
             int p = int.Parse(Console.ReadLine());          //price of one truffle
 
-            float numberCakesCan = int.Parse(Console.ReadLine()); //Amount of cakes we have enough flour for 
+            float numberCakesCan;  //= int.Parse(Console.ReadLine()); Amount of cakes we have enough flour for 
             numberCakesCan = f / c;
 
             if (numberCakesCan > n)
             {
-                Console.WriteLine("n");
-                float truffelCost = int.Parse(Console.ReadLine());
+                //Console.WriteLine("");
+                float truffelCost = float.Parse(Console.ReadLine());
                 truffelCost = t * p;
                 Console.WriteLine("{0}", truffelCost);
 
@@ -36,7 +36,12 @@ namespace ConsoleApplication1
             }
             else if (numberCakesCan < n)
             {
-
+                //Console.WriteLine("numberCakesCan");
+                float totalFlour = float.Parse(Console.ReadLine());
+                totalFlour = n * c;
+                float kilograms = float.Parse(Console.ReadLine());
+                kilograms = totalFlour - f;
+                Console.WriteLine("Can make only {0} cakes, needed {1} kg more flour", numberCakesCan, kilograms);
             }
         }
     }
